@@ -1,4 +1,4 @@
-//Estamos iniciando uma variavel, pode ser com (var ou let), e ja definindo um valor para ela.
+//Estamos iniciando uma variavel, pode ser com (var, let ou const), e ja definindo um valor para ela.
 let produto = "Caneta";
 var quantidade = 10; 
 var preco = 6.4;
