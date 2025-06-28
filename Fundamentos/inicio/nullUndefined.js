@@ -19,3 +19,4 @@ let d = c
 d++
 
 console.log(c,d);
+  
