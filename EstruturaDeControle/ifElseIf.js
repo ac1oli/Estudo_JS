@@ -16,4 +16,4 @@ const imprimirRespostas = function(nota){
     }
 }
 
-imprimirRespostas(5)
+imprimirRespostas(7.9)
