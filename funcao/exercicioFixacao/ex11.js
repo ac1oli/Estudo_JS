@@ -1,29 +1,27 @@
-// const anotacao = function (pontos) {
-//     let record = 0
-//     for(let i = 1; i < pontos; i++){
-//         record += pontos
-//     }
+const anotacao1 = function (pontuacoesString) {
+    const pontuacoes = pontuacoesString.split(" ").map(Number)
 
-//     return record
-// }
+    let record = pontuacoes[0]
+    let pior = pontuacoes[0]
+    let quebraDeRecorde = 0
+    let piorJogo = 1
 
-// console.log(`teste ${anotacao(10, 20, 20, 8,25, 3, 0, 30, 1).toString()}`)
+    for(let i = 1; i < pontuacoes.length; i++) {
+        const atual = pontuacoes[i]
 
-function compararUltimoComAnteriores(array) {
-    const ultimo = array[array.length - 1];
-
-    array.forEach((valor, index) => {
-        if (index === array.length - 1) return; // pula o último (não compara com ele mesmo)
-
-        if (valor > ultimo) {
-            console.log(`Elemento na posição ${index} (${valor}) é MAIOR que o último (${ultimo})`);
-        } else if (valor < ultimo) {
-            console.log(`Elemento na posição ${index} (${valor}) é MENOR que o último (${ultimo})`);
-        } else {
-            console.log(`Elemento na posição ${index} (${valor}) é IGUAL ao último (${ultimo})`);
+        if(atual > record) {
+            record = atual
+            quebraDeRecorde++
+        }else if(atual < pior) {
+            pior = atual
+            piorJogo = i + 1
         }
-    });
+    }
+
+    return [quebraDeRecorde, piorJogo]
 }
-''
-const numeros = [10, 20, 8, 25, 3, 0, 30, 1];
-compararUltimoComAnteriores(numeros);
+
+
+console.log(`teste ${anotacao1("10 20 20 8 25 3 0 30 1")}`);
+
+
